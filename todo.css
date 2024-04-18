@@ -1,59 +1,76 @@
-* {
+body {
   background-color: rgb(240, 220, 187);
 }
-#titlelist {
+
+#heading1 {
   font-size: xxx-large;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
 }
 
-.containers {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 500px;
-  row-gap: 50px;
-  margin: auto;
-}
-#placeholder1 {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 26px;
-  text-align: center;
-  margin-top: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
-#heading1 {
+#heading2 {
   font-size: x-large;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  color: brown;
+  color: hsl(0, 59%, 41%);
   text-align: center;
 }
 
-#heading2 {
-  font-size: x-large;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: black;
+#actionArea {
   text-align: center;
 }
 
-.container1 {
+.inputField {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
   border-color: black;
-  row-gap: 20px;
+  padding: 3px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.container2 {
-  background-color: rgb(243, 176, 149);
-  border: 2px solid rgb(198, 134, 108);
-  height: 300px;
-}
-
-#goals {
-  color: black;
-  background-color: rgb(243, 176, 149);
-}
-
-#add {
+.addButton {
   color: brown;
-  font-size: 27px;
+  background-color: rgb(240, 220, 187);
+  font-size: 20px;
+}
+
+.doneButton {
+  background-color: rgb(143, 224, 143);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  border-color: black;
+  padding: 3px;
+}
+
+.donestrik {
+  text-decoration: line-through;
+  color: green;
+}
+
+.removeButton {
+  background-color: rgb(220, 107, 107);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  border-color: black;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+#listArea {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  border-color: black;
+  padding: 3px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+li{
+  list-style-type:  none;
 }
