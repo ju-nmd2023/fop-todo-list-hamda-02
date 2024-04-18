@@ -36,11 +36,9 @@ function displayList() {
   //for loop for displaying the task
   for (let i = 0; i < tasks.length; i++) {
     //1#create the ul(task) element
-    // const task = taskArray[i];
     const listItem = document.createElement("li");
     const taskElement = document.createElement("ul");
     listItem.innerText = tasks[i].toDo;
-    //  taskElement.innerText = task;
 
     //the done button+ strike
     doneButton = document.createElement("button");
