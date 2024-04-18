@@ -19,53 +19,91 @@ function loadHandlar() {
   addButton.classList.add("addButton");
   actionAreaElement.appendChild(inputFieldElement);
   actionAreaElement.appendChild(addButton);
+
+  const storage = localStorage.getItem("storage");
+  if (storage) {
+    tasks = JSON.parse(storage);
+    displayList();
+  }
 }
 
-// displaying the task list added area
+// so displaying the task list added area
 function displayList() {
   listArea = document.getElementById("listArea");
+
   listArea.innerHTML = "";
 
   //for loop for displaying the task
-  for (let task of tasks) {
+  for (let i = 0; i < tasks.length; i++) {
     //1#create the ul(task) element
+    // const task = taskArray[i];
     const listItem = document.createElement("li");
     const taskElement = document.createElement("ul");
-    listItem.innerText = task;
+    listItem.innerText = tasks[i].toDo;
     //  taskElement.innerText = task;
 
-    //the done button
+    //the done button+ strike
     doneButton = document.createElement("button");
     doneButton.innerText = "Done";
     doneButton.classList.add("doneButton");
-    //linethrough task when clciked
-    doneButton.addEventListener("click", () => {
+    //next here linethrough task when clciked
+
+    if (tasks[i].strike === true) {
       listItem.classList.add("donestrik");
+      storage();
+    }
+
+    doneButton.addEventListener("click", () => {
+      tasks[i].strike = true;
+      if (tasks[i].strike === true) {
+        listItem.classList.add("donestrike");
+        storage();
+      }
     });
-    //the remove button
+    //the remove button + event
     removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
     removeButton.classList.add("removeButton");
-    removeButton.addEventListener("click", removeTask);
+    removeButton.addEventListener("click", () => {
+      const index = tasks.indexOf(tasks[i]);
+      removeTask(index);
+    });
 
     taskElement.appendChild(listItem);
     taskElement.appendChild(doneButton);
     taskElement.appendChild(removeButton);
     listArea.appendChild(taskElement);
+
+    storage();
   }
 }
 function addTaskToList() {
   const taskInput = inputFieldElement.value;
 
-  if (taskInput !== "") {
-    tasks.push(taskInput);
+  list = {
+    toDo: taskInput,
+    strike: false,
+  };
+
+  if (list !== "") {
+    tasks.push(list);
     displayList();
-    // empty inputfield when button is clicked
     inputFieldElement.value = "";
   }
+
+  storage();
 }
 
 //when i click the remove button task removes
-function removeTask() {}
+function removeTask(index) {
+  tasks.splice(index, 1);
+
+  displayList();
+  storage();
+}
+
+function storage() {
+  localStorage.setItem("storage", JSON.stringify(tasks));
+}
 
 window.addEventListener("load", loadHandlar);

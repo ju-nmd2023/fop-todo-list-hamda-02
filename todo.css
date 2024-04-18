@@ -34,10 +34,12 @@ body {
   color: brown;
   background-color: rgb(240, 220, 187);
   font-size: 20px;
+  margin-left: 6px;
 }
 
 .doneButton {
-  background-color: rgb(143, 224, 143);
+  background-color: hsl(0, 59%, 41%);
+  color: rgb(240, 220, 187);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   text-align: center;
@@ -46,14 +48,15 @@ body {
   padding: 3px;
 }
 
-.donestrik {
+.donestrike {
   text-decoration: line-through;
   color: green;
 }
 
 .removeButton {
-  background-color: rgb(220, 107, 107);
+  background-color: hsl(0, 59%, 41%);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(240, 220, 187);
   font-size: 20px;
   text-align: center;
   border-color: black;
@@ -68,9 +71,10 @@ body {
   margin-top: 30px;
   border-color: black;
   padding: 3px;
+  margin-right: 40px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-li{
-  list-style-type:  none;
+li {
+  list-style-type: none;
 }
