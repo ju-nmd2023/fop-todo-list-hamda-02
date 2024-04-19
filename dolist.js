@@ -1,3 +1,4 @@
+//cite:https://chat.openai.com/share/b6155a09-e39d-4ce9-93c9-8ce65f7afc5a
 let tasks = [];
 let inputFieldElement;
 let addButton;
@@ -47,7 +48,7 @@ function displayList() {
     //next here linethrough task when clciked
 
     if (tasks[i].strike === true) {
-      listItem.classList.add("donestrik");
+      listItem.classList.add("donestrike");
       storage();
     }
 
