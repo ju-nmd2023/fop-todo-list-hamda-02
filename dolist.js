@@ -23,6 +23,8 @@ function loadHandlar() {
 
   const storage = localStorage.getItem("storage");
   if (storage) {
+
+    //use parse to convert the string back to javascript object
     tasks = JSON.parse(storage);
     displayList();
   }
@@ -46,7 +48,7 @@ function displayList() {
     doneButton.innerText = "Done";
     doneButton.classList.add("doneButton");
     //next here linethrough task when clciked
-
+//make the line stay even when action is applied for other things around
     if (tasks[i].strike === true) {
       listItem.classList.add("donestrike");
       storage();
