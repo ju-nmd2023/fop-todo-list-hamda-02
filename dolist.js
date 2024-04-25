@@ -23,7 +23,6 @@ function loadHandlar() {
 
   const storage = localStorage.getItem("storage");
   if (storage) {
-
     //use parse to convert the string back to javascript object
     tasks = JSON.parse(storage);
     displayList();
@@ -48,7 +47,7 @@ function displayList() {
     doneButton.innerText = "Done";
     doneButton.classList.add("doneButton");
     //next here linethrough task when clciked
-//make the line stay even when action is applied for other things around
+    //make the line stay even when action is applied for other things around
     if (tasks[i].strike === true) {
       listItem.classList.add("donestrike");
       storage();
@@ -66,6 +65,7 @@ function displayList() {
     removeButton.innerText = "Remove";
     removeButton.classList.add("removeButton");
     removeButton.addEventListener("click", () => {
+      //got help from chatgpt to make it work
       const index = tasks.indexOf(tasks[i]);
       removeTask(index);
     });
@@ -96,6 +96,7 @@ function addTaskToList() {
 }
 
 //when i click the remove button task removes
+//here too got help from chatgpt to make it work
 function removeTask(index) {
   tasks.splice(index, 1);
 
